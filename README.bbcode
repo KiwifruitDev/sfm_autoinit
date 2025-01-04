@@ -1,0 +1,46 @@
+This script is designed to automatically run other scripts when [b]Source Filmmaker[/b] is started. It also provides a window to manage these scripts and their settings.
+[h2]Usage[/h2]
+The [b]Autoinit Manager[/b] window will normally open automatically, but it can be opened manually through Scripts > kiwifruitdev > autoinit_manager.
+Additionally, you can use "-nostartwizard" as a launch option to disable the session creation popup when starting [b]SFM[/b].
+All script windows that are opened on startup will be given a button in the "Windows" menu so you can open them at any time. By default, these windows will be hidden until shown manually so that your layouts can stay consistent.
+[h2]Patches[/h2]
+Some scripts will be dynamically patched to work without interruptions. The following changes have been made:
+[list]
+[*]Any script that uses "sfmApp.RegisterTabWindow"
+[list]
+[*]A "Show" button for this script will be added to the [b]Autoinit Manager[/b] window.
+[*]The window that was registered will have an option added to the "Window" menu in [b]SFM[/b].
+[/list]
+[*]Any script that uses "sfmApp.ShowTabWindow"
+[list]
+[*]No windows will be shown, this is to prevent custom windows from popping up when [b]SFM[/b] starts.
+[*]You can still show the window by using the "Window" menu in [b]SFM[/b] or through the [b]Autoinit Manager[/b] window.
+[/list]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3200935729]Quick Menu Redux by Fames[/url] (quickmenu_v3.py)
+[list]
+[*]Disabled showing the window on run since it does not use "sfmApp.ShowTabWindow".
+[*]Prevented writing to "sfm_init.py" because it is no longer needed.
+[*]Removed existing code that runs this script from "sfm_init.py" if it exists.
+[/list]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2942912893]Directional Scale Controls (Stretching) by LLIoKoJIad[/url] (directional_scale_patch.py)
+[list]
+[*]Disabled pop-up dialogs that normally appear when the script is run.
+[/list]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2873014451]Facial Flex Unlocker by LLIoKoJIad[/url] (sfm_flex_unlocker.py)
+[list]
+[*]Disabled pop-up dialogs that normally appear when the script is run.
+[/list]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2963450977]Light Limit Patch by KiwifruitDev[/url] (light_limit_patch.py)
+[list]
+[*]Disabled pop-up dialogs that normally appear when the script is run.
+[*]Added enhanced options to [b]Autoinit Manager[/b] to allow you to set the light limit on startup.
+[/list]
+[/list]
+You can view which patches have been applied to a script by right clicking on its entry in the [b]Autoinit Manager[/b] window and hovering over the "Autoinit Patches" option.
+[h2]Development[/h2]
+If you're a developer, add your script to a "scripts/sfm/autoinit" folder. The script will be executed when the [b]SFM[/b] is started and users can enable or disable it in the [b]Autoinit Manager[/b] window. You can then add Autoinit Manager as a dependency to your Workshop item.
+[b]Autoinit Manager[/b] is also available on GitHub. You can find the repository [url=https://github.com/KiwifruitDev/sfm_autoinit]here[/url].
+[h2]License[/h2]
+This script is licensed under the MIT License. See the [url=https://github.com/KiwifruitDev/sfm_autoinit/blob/main/LICENSE]LICENSE[/url] file for more information.
+[h2]Funding[/h2]
+If you would like to support my work, you can check out [url=https://store.steampowered.com/app/2516360/Nonsensical_Video_Generator/]Nonsensical Video Generator[/url], buy me a coffee on [url=https://ko-fi.com/kiwifruitdev]Ko-fi[/url], become a sponsor through [url=https://github.com/sponsors/KiwifruitDev]GitHub Sponsors[/url], or simply share my scripts with others. Thank you for your support!
