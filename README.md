@@ -13,10 +13,10 @@ Some scripts will be dynamically patched to work without interruptions. The foll
 
 - Any script that uses `sfmApp.RegisterTabWindow`
     - A "Show" button for this script will be added to the **Autoinit Manager** window.
-    - The window that was registered will have an option added to the "Window" menu in **SFM**.
+    - The window that was registered will have an option added to the "Windows" menu in **SFM**.
 - Any script that uses `sfmApp.ShowTabWindow`
     - No windows will be shown, this is to prevent custom windows from popping up when **SFM** starts.
-    - You can still show the window by using the "Window" menu in **SFM** or through the **Autoinit Manager** window.
+    - You can still show the window by using the "Windows" menu in **SFM** or through the **Autoinit Manager** window.
 - [Quick Menu Redux by Fames](https://steamcommunity.com/sharedfiles/filedetails/?id=3200935729) (`quickmenu_v3.py`)
     - Disabled showing the window on run since it does not use `sfmApp.ShowTabWindow`.
     - Prevented writing to `sfm_init.py` because it is no longer needed.

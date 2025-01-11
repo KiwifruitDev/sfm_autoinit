@@ -3,7 +3,7 @@
 # This software is licensed under the MIT License.
 # MIT License
 # 
-# Copyright (c) 2024 KiwifruitDev
+# Copyright (c) 2025 KiwifruitDev
 # 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -23,11 +23,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-import sfm
 import sfmApp
 import os
-import _winreg as winreg
-import win32api
 from sfmApp import ShowTabWindow as sfmapp_show_tab_window
 from PySide import QtGui, QtCore, shiboken
 
@@ -263,7 +260,7 @@ class AutoinitManager(QtGui.QWidget):
         self.footertextlayout = QtGui.QVBoxLayout()
         self.footer1 = QtGui.QLabel("SFM Autoinit v%s by KiwifruitDev" % _autoinit_version)
         self.footertextlayout.addWidget(self.footer1)
-        #self.footer2 = QtGui.QLabel("Copyright (c) 2024 KiwifruitDev")
+        #self.footer2 = QtGui.QLabel("Copyright (c) 2025 KiwifruitDev")
         #self.footertextlayout.addWidget(self.footer2)
         #self.footer3 = QtGui.QLabel("This software is licensed under the MIT License.")
         #self.footertextlayout.addWidget(self.footer3)

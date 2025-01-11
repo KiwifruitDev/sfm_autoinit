@@ -3,7 +3,7 @@
 # This software is licensed under the MIT License.
 # MIT License
 # 
-# Copyright (c) 2024 KiwifruitDev
+# Copyright (c) 2025 KiwifruitDev
 # 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -27,9 +27,9 @@ import sfm
 import sfmApp
 import os
 import traceback
-from PySide import QtGui, QtCore
+from PySide import QtGui
 
-_autoinit_version = "1.0"
+_autoinit_version = "1.1"
 
 def _autoinit_msg(msg):
     sfm.Msg("[AUTOINIT] " + msg + "\n")
