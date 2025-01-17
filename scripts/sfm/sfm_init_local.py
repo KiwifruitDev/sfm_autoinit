@@ -29,7 +29,7 @@ import os
 import traceback
 from PySide import QtGui
 
-_autoinit_version = "1.1"
+_autoinit_version = "1.2"
 
 def _autoinit_msg(msg):
     sfm.Msg("[AUTOINIT] " + msg + "\n")
@@ -83,9 +83,14 @@ class Autoinit:
         # Load ini if it exists
         self.skipped = []
         if os.path.exists(self.skipped_ini):
-            with open(self.skipped_ini) as f:
-                self.skipped = f.read().splitlines()
-                _autoinit_msg("Loaded " + str(len(self.skipped)) + " skipped scripts from \"" + self.skipped_ini + "\".")
+            try:
+                with open(self.skipped_ini) as f:
+                    self.skipped = f.read().splitlines()
+                    _autoinit_msg("Loaded " + str(len(self.skipped)) + " skipped scripts from \"" + self.skipped_ini + "\".")
+            except:
+                _autoinit_msg("Error loading skipped scripts from \"" + self.skipped_ini + "\". Creating new ini...")
+                with open(self.skipped_ini, "w") as f:
+                    f.write("")
         else:
             _autoinit_msg("No ini file found, creating \"" + self.skipped_ini + "\"...")
             with open(self.skipped_ini, "w") as f:
@@ -100,9 +105,14 @@ class Autoinit:
         # Load ini if it exists
         self.appended = []
         if os.path.exists(self.appended_ini):
-            with open(self.appended_ini) as f:
-                self.appended = f.read().splitlines()
-                _autoinit_msg("Loaded " + str(len(self.appended)) + " appended scripts from \"" + self.appended_ini + "\".")
+            try:
+                with open(self.appended_ini) as f:
+                    self.appended = f.read().splitlines()
+                    _autoinit_msg("Loaded " + str(len(self.appended)) + " appended scripts from \"" + self.appended_ini + "\".")
+            except:
+                _autoinit_msg("Error loading appended scripts from \"" + self.appended_ini + "\". Creating new ini...")
+                with open(self.appended_ini, "w") as f:
+                    f.write("")
         else:
             _autoinit_msg("No ini file found, creating \"" + self.appended_ini + "\"...")
             with open(self.appended_ini, "w") as f:
@@ -116,9 +126,14 @@ class Autoinit:
     def load_light_limit_ini(self):
         # Load ini if it exists
         if os.path.exists(self.light_limit_ini):
-            with open(self.light_limit_ini) as f:
-                self.light_limit = int(f.read())
-                _autoinit_msg("Loaded light limit " + str(self.light_limit) + " from \"" + self.light_limit_ini + "\".")
+            try:
+                with open(self.light_limit_ini) as f:
+                    self.light_limit = int(f.read())
+                    _autoinit_msg("Loaded light limit " + str(self.light_limit) + " from \"" + self.light_limit_ini + "\".")
+            except:
+                _autoinit_msg("Error loading light limit from \"" + self.light_limit_ini + "\". Creating new ini...")
+                with open(self.light_limit_ini, "w") as f:
+                    f.write(str(self.light_limit))
         else:
             _autoinit_msg("No ini file found, creating \"" + self.light_limit_ini + "\"...")
             with open(self.light_limit_ini, "w") as f:
